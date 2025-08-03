@@ -9,6 +9,7 @@ public class AppController {
     @GetMapping("/app")
     public String index() {
         int value = 100 / 0; // This will cause an ArithmeticException
+        System.out.println("Value: " + value);
         return "ok 200";
     }
 }
