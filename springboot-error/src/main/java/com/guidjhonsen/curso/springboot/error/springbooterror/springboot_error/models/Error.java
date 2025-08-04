@@ -1,11 +1,11 @@
 package com.guidjhonsen.curso.springboot.error.springbooterror.springboot_error.models;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Error {
     private String message;
     private String error;
-    private String status;
+    private int status;
     private Date date;
     
     public String getMessage() {
@@ -20,10 +20,10 @@ public class Error {
     public void setError(String error) {
         this.error = error;
     }
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
     public Date getDate() {
