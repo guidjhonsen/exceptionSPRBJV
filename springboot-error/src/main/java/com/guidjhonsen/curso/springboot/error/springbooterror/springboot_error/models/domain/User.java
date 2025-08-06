@@ -1,10 +1,11 @@
 package com.guidjhonsen.curso.springboot.error.springbooterror.springboot_error.models.domain;
 
+
 public class User {
     private Long id;
     private String name;
     private String lastname;
-
+    private Role role;
 
     public User(Long id, String name, String lastname) {
         this.id = id;
@@ -34,4 +35,10 @@ public class User {
         this.lastname = lastname;
     }
 
+    public Role getRole() {
+        return role;
+    }
+    public void setRole(Role role) {
+        this.role = role;
+    }
 }
