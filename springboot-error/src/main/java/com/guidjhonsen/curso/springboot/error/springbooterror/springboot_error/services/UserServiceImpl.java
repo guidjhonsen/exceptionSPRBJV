@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.guidjhonsen.curso.springboot.error.springbooterror.springboot_error.exceptions.UserNotFoundException;
 import com.guidjhonsen.curso.springboot.error.springbooterror.springboot_error.models.domain.User;
 
 @Service
@@ -34,12 +35,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(Long id) {
-        for (User user : users) {
-            if (user.getId().equals(id)) {
-                return user;
+        User user = null;
+        for (User u : users) {
+            if (u.getId().equals(id)) {
+                user = u;
+                break;
             }
         }
-        return null; // Placeholder return
+        
+        if (user == null) {
+            throw new UserNotFoundException(id);
+        }
+
+        return user; // Placeholder return
     }
 
 }
