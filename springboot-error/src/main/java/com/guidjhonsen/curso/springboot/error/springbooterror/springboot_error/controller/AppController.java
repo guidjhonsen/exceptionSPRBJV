@@ -8,7 +8,11 @@ public class AppController {
 
     @GetMapping("/app")
     public String index() {
-        int value = 100 / 0; // This will cause an ArithmeticException
+        //int value = 100 / 0; // This will cause an ArithmeticException
+        int value = Integer.parseInt("10x"); // This will cause a NumberFormatException
+        
+        System.out.println("value: " + value);
+        
         return "ok 200";
     }
 }
